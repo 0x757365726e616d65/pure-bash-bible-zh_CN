@@ -5,10 +5,10 @@ bash提供了两个内置命令：readarray和mapfile，它们是同义词。它
 
 
 > 语法
-
+```shell
 	mapfile [OPTIONS] ARRAY
 	readarray [OPTIONS] ARRAY
-
+```
 ```
 其中options:
 -O INDEX  ：指定从哪个索引号开始存储数据，默认存储数据的起始索引号为0
