@@ -5,8 +5,9 @@ declare为shell指令，在第一种语法中可用来声明变量并设置变�
 
 
 > 语法
-
+```shell
 	declare [+/-][rxi][变量名称＝设置值] 或 declare -f/-F
+```
 
 
 > 参数说明
@@ -33,6 +34,7 @@ declare为shell指令，在第一种语法中可用来声明变量并设置变�
 
 
 ### 改变变量属性 ###
+```shell
 
 	# declare -i ef //声明整数型变量
 	# ef=1  //变量赋值（整数值）
@@ -45,9 +47,9 @@ declare为shell指令，在第一种语法中可用来声明变量并设置变�
 	# ef="wer"
 	# echo $ef
 	wer
-
+```
 ### 列出脚本中的函数 ###
-
+```shell
 	[root@ ~]# cat aa
 	aaa(){
 	dsfasdf
@@ -72,5 +74,5 @@ declare为shell指令，在第一种语法中可用来声明变量并设置变�
 	{ 
 	    dasfasdf
 	}
-
+```
 
