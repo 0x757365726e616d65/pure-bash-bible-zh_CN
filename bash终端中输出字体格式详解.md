@@ -141,17 +141,21 @@ ANSI/VT100 终端和终端仿真器不只是能够显示黑色和白色文本; �
 
 ```shell
 echo -e "\e[38;5;82mHello \e[38;5;198mWorld"
-
-
 ```
+
+
 
 ![image](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/images/console_codes_imgs/20190619142534957.png)
 
 ```shell
-for i in {16..21} {21..16} ; do echo -en "\e[38;5;${i}m#\e[0m" ; done ; echo
+for i in {16..21} {21..16} ; do 
+    echo -en "\e[38;5;${i}m#\e[0m" 
+done 
 
-
+echo
 ```
+
+
 
 ![image](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/images/console_codes_imgs/20190619142540367.png)
 
@@ -163,17 +167,21 @@ for i in {16..21} {21..16} ; do echo -en "\e[38;5;${i}m#\e[0m" ; done ; echo
 
 ```shell
 echo -e "\e[40;38;5;82m Hello \e[30;48;5;82m World \e[0m"
-
-
 ```
+
+
 
 ![image](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/images/console_codes_imgs/20190619142741691.png)
 
 ```shell
-for i in {16..21} {21..16} ; do echo -en "\e[48;5;${i}m \e[0m" ; done ; echo
+for i in {16..21} {21..16} ; do 
+    echo -en "\e[48;5;${i}m \e[0m" 
+done 
 
-
+echo
 ```
+
+
 
 ![image](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/images/console_codes_imgs/20190619142746703.png)
 
@@ -215,20 +223,21 @@ for i in {16..21} {21..16} ; do echo -en "\e[48;5;${i}m \e[0m" ; done ; echo
  
 #Background
 for clbg in {40..47} {100..107} 49 ; do
-	#Foreground
-	for clfg in {30..37} {90..97} 39 ; do
-		#Formatting
-		for attr in 0 1 2 4 5 7 ; do
-			#Print the result
-			echo -en "\e[${attr};${clbg};${clfg}m ^[${attr};${clbg};${clfg}m \e[0m"
-		done
-		echo #Newline
+    #Foreground
+    for clfg in {30..37} {90..97} 39 ; do
+        #Formatting
+	for attr in 0 1 2 4 5 7 ; do
+	    #Print the result
+	    echo -en "\e[${attr};${clbg};${clfg}m ^[${attr};${clbg};${clfg}m \e[0m"
 	done
+	echo #Newline
+    done
 done 
+
 exit 0
-
-
 ```
+
+
 
 ![image](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/images/console_codes_imgs/20190619143725445.png)
 
@@ -244,9 +253,11 @@ exit 0
 # and/or modify it under the terms of the Do What The Fuck You Want
 # To Public License, Version 2, as published by Sam Hocevar. See
 # http://sam.zoy.org/wtfpl/COPYING for more details.
- 
-for fgbg in 38 48 ; do # Foreground / Background
-    for color in {0..255} ; do # Colors
+
+# Foreground / Background 
+for fgbg in 38 48 ; do 
+    # Colors
+    for color in {0..255} ; do 
         # Display the color
         printf "\e[${fgbg};5;%sm  %3s  \e[0m" $color $color
         # Display 6 colors per lines
@@ -258,9 +269,9 @@ for fgbg in 38 48 ; do # Foreground / Background
 done
  
 exit 0
-
-
 ```
+
+
 
 ![image](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/images/console_codes_imgs/2019061914383268.png)
 
